@@ -1,0 +1,187 @@
+public class Picture extends Rectangle
+{
+    
+    private Square sky;
+    
+    private Triangle star1;
+    private Triangle star2;
+    private Triangle star3;
+    private Triangle star4;
+    private Triangle star5;
+    
+    private Circle moonOutline;
+    private Circle moon;
+   
+    private Square wall;
+    private Square window1;
+    private Square window2;
+    private Square window3;
+    private Square door1;
+    private Square door2;
+    private Triangle roof;
+    
+
+    /**
+     * Constructor for objects of class Picture
+     */
+    public Picture()
+    {
+        this.draw();// nothing to do... instance variables are automatically set to null
+    }
+
+    /**
+     * Draw this picture.
+     */
+    public void draw()
+    {
+        sky = new Square();
+        sky.changeColor("black");
+        sky.moveHorizontal(-60);
+        sky.moveVertical(-50);
+        sky.changeSize(800);
+        sky.makeVisible();
+        
+        star1 = new Triangle();
+        star1.changeColor("yellow");
+        star1.changeSize(5, 5);
+        star1.moveHorizontal(120);
+        star1.moveVertical(1);
+        star1.makeVisible();
+        
+        star2 = new Triangle();
+        star2.changeColor("yellow");
+        star2.changeSize(4, 4);
+        star2.moveHorizontal(60);
+        star2.moveVertical(20);
+        star2.makeVisible();
+        
+        star3 = new Triangle();
+        star3.changeColor("yellow");
+        star3.changeSize(5, 5);
+        star3.moveHorizontal(150);
+        star3.moveVertical(60);
+        star3.makeVisible();
+        
+        star4 = new Triangle();
+        star4.changeColor("yellow");
+        star4.changeSize(5, 5);
+        star4.moveHorizontal(240);
+        star4.moveVertical(10);
+        star4.makeVisible();
+        
+        star5 = new Triangle();
+        star5.changeColor("yellow");
+        star5.changeSize(5, 5);
+        star5.moveHorizontal(-25);
+        star5.moveVertical(200);
+        star5.makeVisible();
+        
+        
+        moonOutline = new Circle();
+        moonOutline.changeColor("black");
+        moonOutline.moveHorizontal(-21);
+        moonOutline.moveVertical(-11);
+        moonOutline.changeSize(103);
+        moonOutline.makeVisible();
+        
+        
+        
+        moon = new Circle();
+        moon.changeColor("white");
+        moon.moveHorizontal(-20);
+        moon.moveVertical(-10);
+        moon.changeSize(100);
+        moon.makeVisible();
+        
+        
+        
+        wall = new Square();
+        wall.changeColor("red");
+        wall.moveVertical(80);
+        wall.changeSize(200);
+        wall.makeVisible();
+
+        window1 = new Square();
+        window1.changeColor("blue");
+        window1.moveHorizontal(30);
+        window1.moveVertical(100);
+        window1.changeSize(40);
+        window1.makeVisible();
+        
+        window2 = new Square();
+        window2.changeColor("blue");
+        window2.moveHorizontal(130);
+        window2.moveVertical(100);
+        window2.changeSize(40);
+        window2.makeVisible();
+        
+        window3 = new Square();
+        window3.changeColor("blue");
+        window3.moveHorizontal(30);
+        window3.moveVertical(180);
+        window3.changeSize(40);
+        window3.makeVisible();
+        
+        door1 = new Square();
+        door1.changeColor("green");
+        door1.moveHorizontal(130);
+        door1.moveVertical(180);
+        door1.changeSize(40);
+        door1.makeVisible();
+        
+        door2 = new Square();
+        door2.changeColor("green");
+        door2.moveHorizontal(130);
+        door2.moveVertical(200);
+        door2.changeSize(40);
+        door2.makeVisible();
+       
+
+        roof = new Triangle();
+        roof.changeSize(50, 225);
+        roof.moveHorizontal(108);
+        roof.moveVertical(70);
+        roof.makeVisible();
+
+    
+    }
+
+    /**
+     * Change this picture to black/white display
+     */
+    public void setBlackAndWhite()
+    {
+        if(wall != null)   // only if it's painted already...
+        {
+            sky.changeColor("white");
+            star1.changeColor("yellow");
+            star2.changeColor("yellow");
+            star3.changeColor("yellow");
+            star4.changeColor("yellow");
+            star5.changeColor("yellow");
+            moonOutline.changeColor("black");
+            moon.changeColor("white");
+            wall.changeColor("black");
+            window1.changeColor("white");
+            window2.changeColor("white");
+            window3.changeColor("black");
+            roof.changeColor("black");
+          
+        }
+    }
+
+    /**
+     * Change this picture to use color display
+     */
+    public void setColor()
+    {
+        if(wall != null)   // only if it's painted already...
+        {
+            wall.changeColor("blue");
+            window1.changeColor("black");
+            roof.changeColor("green");
+            moon.changeColor("red");
+        }
+    }
+
+}
